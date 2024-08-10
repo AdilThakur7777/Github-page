@@ -9,27 +9,35 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f5f5dc; /* Beige background */
+            color: #333;
         }
         header {
-            background-color: #333;
+            background-color: #6a1b9a; /* Light purple */
             color: white;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            animation: slideDown 1s ease-in-out;
         }
         nav {
             text-align: center;
-            background-color: #444;
+            background-color: #8e24aa; /* Darker light purple */
             padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: fadeIn 1.5s ease-in-out;
         }
         nav a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #f5f5dc; /* Beige hover color */
         }
         section {
             padding: 20px;
@@ -37,15 +45,58 @@
             max-width: 800px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-in-out forwards;
+            animation-delay: 0.5s;
         }
         footer {
             text-align: center;
             padding: 10px 0;
-            background-color: #333;
+            background-color: #6a1b9a; /* Light purple */
             color: white;
             position: fixed;
             width: 100%;
             bottom: 0;
+            animation: slideUp 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
